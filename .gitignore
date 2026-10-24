@@ -1,0 +1,21 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+.venv/
+*.pyc
+*.pyo
+.pytest_cache/
+dist/
+*.egg-info/
+node_modules/
+.next/
+.DS_Store
+docs/design/*.html
+docs/design/*.pdf
+docs/design/*.png
+
+# 需求來源：大型二進位與含帳密檔案不進版控
+需求/*.pptx
+需求/*.zip
+需求/文檔.md

@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: check-conventions
+        name: 專案規範檢查（header / 命名 / 稽核欄）
+        entry: uv run python scripts/check_conventions.py
+        language: system
+        types: [python]
+        pass_filenames: false
