@@ -29,3 +29,12 @@
 - **文件**：新增 `ADR-005-agent-conversation-context.md`（草稿）；TASK.md Layer 4 新增驗收條件與 2 天估算（合計 23.5 天）；SDD 待決 ADR 清單補入 ADR-005。
 - **誤判與修正**：先把這份 ADR 編為 ADR-004，之後才發現 SDD.md 與 TODO.md 已把 ADR-004 預留給「LLM 供應商與 Gateway」，改為 ADR-005。寫入 feedback memory。
 - **待確認**：Gemini 多輪 function calling 的思考簽章處理（Layer 4 以實際 API 驗證）、單次練習的對話輪數與工具結果大小（決定摘要是否進 MVP1）、是否經 AI Gateway。
+
+## 2026-10-26 PRD 對照與對焦會議準備
+
+- **讀產品規劃團隊的 POC repo**：確認 `docs/prd/` 只有 00 產品總覽（已確認）、PRD_PLAN（12 份計畫）、30_NOTES；其餘 PRD 尚未寫。本次完整讀了 00 與 PRD_PLAN，以及我方 SDD、MVP1-SCOPE、ARCHITECTURE；未讀 PRD 以外的 POC 文件、我方 TASK.md 與 ADR。
+- **PRD 與我方對照**：大方向一致；三個決定性差異：(1) 登入（PRD「這一版」含 SSO 與同 email 合併，我方 MVP2）；(2) 後台（PRD 為下一階段、以指令代替，我方 MVP1 含 A0–A4）；(3) 情境改版（PRD 標未定義，我方已有「停留原版本」）。另列 PRD 已有定論、我方 SDD 尚未涵蓋的 8 項，與雙方皆未決事項。
+- **對焦會議準備**：使用者要求整理與產品規劃團隊對焦的事項。產出 `docs/meetings/2026-10-26-對焦會議/ALIGNMENT-MEETING-PREP.md`（目標、90 分鐘議程、差異與未決、PRD 格式問題、作業形式與簽核提案、引擎與責任歸屬表、大象說明、內部判斷）與同資料夾的 `ALIGNMENT-MEETING.pptx`（16 張，對外版，未含大象草稿與內部判斷；pptx 不進版控）。
+- **確認的方向（使用者）**：會議先由我方用 Sitemap 講認知，再由對方補充；以頁面為單位對焦，不逐份審 AI 產出的大文件；雙方簽核定版，不接受事後以「AI 產的沒看到」為由；時間允許就按部就班。
+- **工具與環境**：pptx 驗證腳本需 Python 3.10+，系統 3.9 不行，改用 python3.12；pptxgenjs 需在暫存目錄 npm install。
+- **注意**：簡報大象頁寫「PRD 計畫 12 份，00 已確認，其餘撰寫中」，PRD 計畫原文為「還沒寫」，會前請確認措辭。

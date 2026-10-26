@@ -41,6 +41,9 @@
 - [ ] 與產品規劃團隊對齊 `docs/specs/UX-GUIDELINES.md` §6 的 Q-1～Q-6；Layer 4 設計 SSE 事件時納入 §4 的事件類型
 - [ ] 確認動態情境管理在 MVP1 的形式：API/CLI 或最小管理畫面（畫面 +3 天）；情境包改存 DB 並有版本（Layer 1 Schema 預留）
 - [ ] 確認 TASK.md 工時是否以「人工開發」或「AI 輔助開發」為基準，並於 Layer 1 驗收後用實際值校準
+- [ ] **對焦會議（與產品規劃團隊）**：資料在 `docs/meetings/2026-10-26-對焦會議/`。待辦：確定會議日期並更名資料夾；對照上週四 R&R 填 PREP §5 的「由誰做」欄；決定我方簽核人；寄出前去除 MVP1-SCOPE 的工時與 admin 密碼細節；會前寄 Sitemap 與三個差異（SSO 時程、後台範圍、情境改版）
+- [ ] 對焦後補進 SDD／Layer 1 DDL 的 PRD 已有定論項目：Skill 不依附單一情境、用量可分指定料理／Playground、情境包課程等級欄位、學習紀錄事件表、Twin 串接 UC（情境時鐘、結構化錯誤、op_id 重送偵測、簽章身分）、安全營運（登入失效、備份、AI 費用監看）、對話接續、重設保留 Skill
+- [ ] 確認回覆規則（病患／對方回覆）由平台還是 Twin 執行：決定 backend 是否自建規則引擎，影響 Layer 3、4 工時
 - [x] 建立第一個本地 commit（2026-10-24 checkpoint）
 - [ ] push 到 `https://github.com/Blackjtsai/AgentCraft.git`（待使用者核准；需 GitHub 認證）
 
