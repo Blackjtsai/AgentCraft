@@ -21,3 +21,11 @@
 - **版控防線**：`需求/AIP_Education-main/`（產品規劃團隊私有 repo 解壓縮內容）與 `docs/meetings/**/*.pptx` 加入 `.gitignore`；先前未列入，會被 commit。
 - **同批 commit 的他次對話產物**（本次對話未參與，僅隨 checkpoint 一併提交）：`MVP1-SCOPE.md`、ADR-003／005、`UX-GUIDELINES.md`、`SCENARIO-INTAKE.md`、`sitemap.html`、`specs/templates/`、`web/template/`、`nas/`、`docs/meetings/`，及 CLAUDE.md、TASK、SDD、SITEMAP 等既有文件的修改。
 
+
+## 2026-10-26 Agent 對話上下文設計（ADR-005）
+
+- **討論結論**：Gemini `generateContent` 無狀態，SDK chat 只把歷史存在記憶體；隱式 / 明確快取只降低成本，不是記憶；Gemini 的 response id 不用於接續對話。決定自建紀錄表，每次依 `case_id` 組裝上下文。
+- **設計**：`act_agent_request`（一次 LLM 呼叫一列，`request_id` 做冪等）與 `act_agent_turn`（歷史一則一列，不可變，存 Gemini 原始 parts）；同案件同時只允許一個進行中呼叫；摘要為新增一列、不刪舊列；MVP1 全量重播歷史並只做隱式快取（固定前綴在前）。
+- **文件**：新增 `ADR-005-agent-conversation-context.md`（草稿）；TASK.md Layer 4 新增驗收條件與 2 天估算（合計 23.5 天）；SDD 待決 ADR 清單補入 ADR-005。
+- **誤判與修正**：先把這份 ADR 編為 ADR-004，之後才發現 SDD.md 與 TODO.md 已把 ADR-004 預留給「LLM 供應商與 Gateway」，改為 ADR-005。寫入 feedback memory。
+- **待確認**：Gemini 多輪 function calling 的思考簽章處理（Layer 4 以實際 API 驗證）、單次練習的對話輪數與工具結果大小（決定摘要是否進 MVP1）、是否經 AI Gateway。
