@@ -15,7 +15,18 @@ docs/design/*.html
 docs/design/*.pdf
 docs/design/*.png
 
+# NAS 素材：圖片不進版控，只留 README 與資料夾結構
+nas/**/*.jpg
+nas/**/*.jpeg
+nas/**/*.png
+nas/**/*.webp
+nas/**/*.gif
+
 # 需求來源：大型二進位與含帳密檔案不進版控
 需求/*.pptx
 需求/*.zip
 需求/文檔.md
+# 產品規劃團隊的私有 repo 解壓縮內容：不進我方版控（保留給回推 PRD 後的比較用）
+需求/AIP_Education-main/
+# 會議簡報等二進位檔不進版控
+docs/meetings/**/*.pptx

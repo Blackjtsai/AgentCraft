@@ -17,15 +17,24 @@ graph TD
     BE --> PG
 
     API -.->|OAuth（MVP2）| IDP[Google / Microsoft SSO]
-    API -->|登入 token 寄信| MAIL[Email 服務]
-    BE -->|LLM 呼叫| GW[AI Gateway<br/>AI 大腦團隊]
+    API -->|寫入寄信 outbox| PG
+    JOB -->|每分鐘撈未發送，成功更新 flag| MAIL[發信 API<br/>SMTP 暫不處理]
+    BE -->|LLM 呼叫| GW[Gemini API<br/>是否經 AI Gateway 待確認]
     BE -->|MCP| TWIN[Orbit Digital Twin<br/>模擬系統 sandbox]
+
+    API -->|受控讀取素材| NAS[(NAS<br/>情境素材)]
+    BE -->|後台上傳寫入| NAS
 
     ENG[平台工程師] -->|CLI| BE
 ```
 
+**基礎架構元件僅七項**：web、api、job、backend、redis、postgresql、nas（使用者 2026-10-24）。
+
+**執行環境**：初期（Layer 1 起）在**本機**執行，**打包部署最後處理** PostgreSQL、Redis、api、web、job 與 `nas/`；K8s 上雲為後續階段（使用者 2026-10-24）。上圖的部署形態不變，只是先不上雲。
+
 **重點約束**
-- LLM 一律經 AI Gateway，不直連模型供應商。
+- LLM 使用 Gemini API；是否經 AI Gateway 待確認。
+- 情境包存資料庫並有版本，由後台動態新增 / 上下線，不需重新部署。
 - Agent 只碰 Digital Twin 的模擬系統（sandbox），與真實系統隔離。
 - Agent 執行位置（backend 內嵌 vs Agent 平台團隊的 Pod，對應 `需求/17.png` 的「個人 Agent Runtime」）**待確認**，見 ADR-001；MVP3 目標為 2027/05 正式上線後累計到年底 10 萬人次，須先確認同時並行數與每次使用的 Agent 輪次，再評估是否需要一人一 Pod。
 
@@ -34,13 +43,13 @@ graph TD
 | Layer | 名稱 | UC 範圍 | 狀態 |
 | ----- | ---- | ------- | ---- |
 | 1 | 基礎建設與資料層 | UC-ACT 3.1.x | ⏳ |
-| 2 | 身分與帳號（邀請碼 + email token 登入；SSO 移 MVP2） | UC-ACT 3.2.1、3.3.1、3.4.1.1、4.3.3 | ⏳ |
-| 3 | 情境包與 Digital Twin 串接 | UC-ACT 3.3.2、3.4.2、4.1.x | ⏳ |
+| 2 | 身分與帳號（邀請碼 + email token 登入；SSO 移 MVP2） | UC-ACT 3.2.1、3.3.1、3.4.1.1、3.5.5、4.3.3 | ⏳ |
+| 3 | 情境包（含動態管理）與 Digital Twin 串接 | UC-ACT 3.3.2、3.4.2.x、4.1.x | ⏳ |
 | 4 | Agent、完成判定與學習紀錄 | UC-ACT 3.3.3–3.3.5、3.4.3、3.4.4、3.5.1、3.5.3、4.2.x | ⏳ |
 | 5 | 學員練習 Web（P1–P7） | UC-ACT 3.2.2–3.2.6、3.2.8 | ⏳ |
 | 6 | 安全、營運與用量 | UC-ACT 3.3.7、3.4.1.2、3.5.2、5.1 | ⏳ |
-| 7 | Scenario Studio（MVP2，待確認） | UC-ACT 3.2.7、3.3.6、3.5.4 | ⏳ |
-| 8 | 端對端整合測試 | UC-ACT 5.2 | ⏳ |
+| 7 | Scenario Studio（MVP1） | UC-ACT 3.2.7、3.3.6、3.5.4 | ⏳ |
+| 8 | 端對端整合測試、最後一週打包部署與雲端測試 | UC-ACT 5.2、3.1.1.1 | ⏳ |
 
 ## 資料 Schema
 

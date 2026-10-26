@@ -155,6 +155,8 @@
 
 ## 技術棧
 
+> **基礎架構元件僅此七項**（使用者 2026-10-24）：web、api、job、backend、redis、postgresql、nas。設計時不要引入其他基礎設施元件（例如獨立的訊息佇列、物件儲存、搜尋引擎）；需要時先問。
+
 | 層 | 技術 |
 | -- | ---- |
 | Web | Next.js + TypeScript（繁體中文單語系，桌機 / 平板直橫 / 手機四種尺寸） |
@@ -163,8 +165,9 @@
 | Job | Python 背景 worker（以 Redis 為佇列；套件於 Layer 1 以 ADR 確認） |
 | DB | PostgreSQL 16（DEV：`db_act_dev`） |
 | Cache / Queue | Redis |
-| 部署 | Kubernetes（雲端） |
-| 外部 | Orbit Digital Twin（MCP）、AI Gateway（LLM）、Google / Microsoft SSO、Email |
+| 部署 | **初期在本機執行；打包部署（K8s、CI/CD、容器化）最後處理**（使用者 2026-10-24）；目標為 Kubernetes（雲端） |
+| 儲存 | NAS（情境素材；`nas/` 為工作鏡像與規約） |
+| 外部 | Orbit Digital Twin（MCP）、**Gemini API（LLM）**、發信 API（SMTP 暫不處理）、Google / Microsoft SSO（MVP2） |
 
 ## 必備技能
 
@@ -181,8 +184,8 @@
 | 4 | Agent、完成判定與學習紀錄 | MVP1 |
 | 5 | 學員練習 Web（P1–P7） | MVP1 |
 | 6 | 安全、營運與用量 | MVP1 |
-| 7 | Scenario Studio | MVP2（待確認） |
-| 8 | 端對端整合測試 | MVP1 先跑 300 人，之後逐步擴大 |
+| 7 | Scenario Studio | MVP1（POC 上有的都要全做；使用者 2026-10-24） |
+| 8 | 端對端整合測試、**最後一週打包部署與雲端測試** | MVP1 先跑 300 人，之後逐步擴大 |
 
 ## 開發慣例
 
@@ -217,9 +220,13 @@
 - **資料要歸屬組織**：所有帳號與衍生資料都帶預設組織（OV-04），不得留空
 - **Playground、Level 2、後台管理、個資刪除是下一階段**，只預留不實作
 - 帳號以 **email** 為唯一識別，同 email 跨登入方式視為同一帳號
-- **MVP1 登入**：邀請碼 + email 驗證後，寄 token 到信箱登入；SSO 後移 MVP2
 - **未決事項不自己定，先問**（回應時間目標、第 5 個產業、Orbit 非醫療業交付時程）
-- LLM 一律經 AI Gateway，不直連模型供應商
+- **LLM 使用 Gemini API**（2026-10-24 決定）；是否經 AI Gateway 待確認，兩者擇一前不自行決定
+- **情境與任務可動態新增**，由後台管理（不需重新部署）；情境包存資料庫並有版本，已開始的練習停留在原版本
+- **登入**：token 一次性、10 分鐘有效；首次需邀請碼，之後只輸入 email；寄信用 outbox 資料表 + job 每分鐘撈未發送者呼叫發信 API，成功後更新 flag
+- 團隊目前 2 人（PM/SA、SD/PG）；**使用者決定 POC 上有的功能 MVP1 全做、先不管人力，時程由使用者另行安排**
+- **後台只有一個 `admin` 管理員**；開發期密碼固定，但**不寫死在程式**，由環境變數提供；**雲端部署前必須更換**
+- 300 人試用放**雲端**；本機開發完畢後，**最後一個星期**才做打包部署與雲端測試
 
 ## 測試規範（專案特有）
 
@@ -243,10 +250,13 @@ AgentCraft/
 │   ├── INDEX.md
 │   ├── TODO.md
 │   ├── SETUP.md
-│   ├── design/                   # ARCHITECTURE / TASK / SDD / ESTIMATION-TEMPLATE / POC-ANALYSIS
+│   ├── design/                   # ARCHITECTURE / TASK / SDD / ESTIMATION-TEMPLATE / POC-ANALYSIS / MVP1-SCOPE
+│   │   └── diagram-gallery/      # 網站地圖等 HTML 圖庫（index.html 為導覽首頁）
 │   ├── decisions/                # ADR
+│   ├── meetings/                 # 會議準備與簡報（pptx 不進版控）
 │   └── specs/
 ├── web/ api/ backend/ job/ external/   # 各 workload，內含 blueprint.md
+├── nas/                          # NAS 工作鏡像與素材規約（圖片不進版控）
 ├── scripts/check_conventions.py
 ├── tests/_templates/
 └── .claude/commands/             # checkpoint / checkservice

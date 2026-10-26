@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P5 案件工作台｜AgentCraft Template</title>
+<link rel="stylesheet" href="assets/theme.css">
+
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="brand" href="index.html">AgentCraft<small>代理工坊</small></a>
+  <nav class="nav" aria-label="主選單"><a href="learning.html" aria-current="page">我的學習</a><a href="explore.html">探索情境</a><a href="results.html">我的成果</a><a href="guide.html">使用說明</a></nav>
+  <span class="user">小明（顯示名稱）</span><a class="btn ghost sm" href="login.html">登出</a>
+</div></header>
+
+<main class="container stack" style="padding-top:16px">
+  <p class="muted" style="margin:0"><a href="learning.html">我的學習</a> › <a href="scenarios.html">醫療業</a> › 案件工作台</p>
+  <div class="row spread">
+    <div><h1 style="margin:0">情境 1・門診異動的跨系統協調 <span class="tag warn">教學模擬</span></h1>
+      <p class="muted" style="margin:0">你是門診行政協調人員｜情境日期（模擬）2026/9/28 09:00</p></div>
+    <div class="row">
+      <button class="btn sm" id="start-tour">播放首次導覽</button>
+      <button class="btn sm">重設本案</button>
+    </div>
+  </div>
+  <div class="media banner" data-slot="工作台橫幅／底圖（情境素材）" style="min-height:80px"></div>
+
+  <div class="row">
+    <div class="stepper" aria-label="關卡">
+      <span class="step now"><span class="dot">1</span>第一關・案件工作台</span><span class="step-sep"></span>
+      <span class="step locked"><span class="dot">2</span>第二關（完成第一關後開放）</span>
+    </div>
+  </div>
+
+  <div class="work">
+    <!-- 左：任務清單 -->
+    <aside class="card panel" data-coach="任務清單" data-coach-order="1" data-coach-text="這裡列出要完成的事，隨 Agent 的實際結果自動更新。以模擬系統查得到的結果為準。">
+      <h3>你的任務 <span class="tag">2 / 4</span></h3>
+      <p class="muted">指揮 Agent 處理分派給你的 3 位病患，最後提交案件報告。</p>
+      <ul class="checklist">
+        <li><span class="check done">✓</span><div><strong>王○明</strong><br><span class="muted">已改掛（系統已查回）</span></div></li>
+        <li><span class="check need">!</span><div><strong>陳○玲</strong> <span class="tag warn">需你處理</span><br><span class="muted">有新消息，等你決定</span></div></li>
+        <li><span class="check now"></span><div><strong>黃○芳</strong><br><span class="muted">進行中：聯絡病患</span></div></li>
+        <li><span class="check"></span><div><strong>提交案件報告</strong><br><span class="muted">完成上面三位後開放</span></div></li>
+      </ul>
+      <hr style="border:0;border-top:1px solid var(--line)">
+      <div class="drawers">
+        <button class="btn sm" data-toggle="#d-task">完整任務卡</button>
+        <button class="btn sm" data-toggle="#d-bound">Agent 的界線</button>
+        <button class="btn sm" data-toggle="#d-help">需要協助？</button>
+      </div>
+      <div id="d-task" hidden class="note" style="margin-top:10px">（抽屜）完整任務卡：情境、起始狀態、任務 1/2、操作界線、最終交付。</div>
+      <div id="d-bound" hidden class="note" style="margin-top:10px"><strong>可直接做</strong>查資料、整理方案。<br><strong>要你先同意</strong>聯絡病患、改掛、發通知。<br><strong>要先停下來查</strong>身分未核對、沒有名額、資料矛盾。<br><strong>要交給負責單位</strong>需要醫療判斷。</div>
+      <div id="d-help" hidden class="note" style="margin-top:10px">（抽屜）起始 Prompt 範例與操作提示，可在方案卡出現時主動帶出對應提示。</div>
+    </aside>
+
+    <!-- 中：對話 -->
+    <section class="card chat" data-coach="與 Agent 協作" data-coach-order="2" data-coach-text="用一般說話的方式交代工作。Agent 會先提出方案，等你同意才會動手。">
+      <div class="chat-log">
+        <div class="msg me">請協助處理分派給我的 3 位病患，查明現況與可行安排，提出方案給我確認。</div>
+
+        <!-- U-1 執行進度說人話 -->
+        <div class="progress-steps" aria-live="polite">
+          <div class="row spread"><strong>Agent 正在處理</strong><span class="muted">已 1 分 20 秒・預估再 1–2 分</span></div>
+          <ol>
+            <li class="done">✓ 已查詢王○明的掛號</li>
+            <li class="done">✓ 已核對院內規則</li>
+            <li class="now">… 正在擬定方案</li>
+          </ol>
+          <div class="bar"><i></i></div>
+          <div class="row spread" style="margin-top:8px"><button class="btn ghost sm" data-toggle="#log1">查看執行紀錄（17 筆）</button><button class="btn sm">停止</button></div>
+          <div id="log1" hidden class="muted" style="margin-top:6px">請假與案件資料・查詢案件概況　完成<br>HIS 掛號系統・查詢掛號　完成 …</div>
+        </div>
+
+        <!-- U-5 方案卡分層 -->
+        <div class="plan" data-coach="方案卡" data-coach-order="3" data-coach-text="這是 Agent 想做的事。先看對象與動作，要看細節再展開；按「同意」只代表 Agent 可以照方案做，不代表病患已答應。">
+          <header><strong>方案 1・王○明、陳○玲 等 3 位</strong><span class="row"><span class="tag warn">會聯絡真人</span><span class="tag warn">會寫入掛號系統</span></span></header>
+          <div class="body">
+            <table><thead><tr><th>對象</th><th>要做什麼</th><th>要你確認什麼</th></tr></thead><tbody>
+              <tr><td>王○明</td><td>電話聯絡、改掛、發簡訊</td><td>是否同意聯絡並依意願改掛</td></tr>
+              <tr><td>陳○玲</td><td>電話聯絡、停診後新掛</td><td>是否同意聯絡並新掛</td></tr>
+              <tr><td>黃○芳</td><td>電話聯絡、停診後新掛</td><td>是否同意聯絡並新掛</td></tr>
+            </tbody></table>
+            <details style="margin-top:8px"><summary>展開：可提供的選項、執行條件、停止條件</summary>
+              <p class="muted"><strong>選項</strong>10/7（三）夜診、10/8（四）下午診 … <br><strong>執行條件</strong>學員同意後依序執行：核對身分 → 依意願辦理 → 發簡訊。<br><strong>停止條件</strong>未接通需等 30 分鐘；累計 3 次未接通依規則交接；病患提出醫療判斷問題依規則交接。</p></details>
+            <div class="note" style="margin-top:8px">提示：先核對身分、看選項，再按同意。</div>
+          </div>
+          <footer><button class="btn primary">同意</button><button class="btn">不同意</button><button class="btn">修改</button><span class="muted">同意後 Agent 只在這個方案範圍內執行；也可以先在下方問 Agent 問題，方案會保留。</span></footer>
+        </div>
+
+        <!-- U-7 情境事件 -->
+        <div class="event">
+          <div class="row spread"><strong>情境消息</strong><span class="muted">模擬時間 9/28 09:10・只有你看得到</span></div>
+          <p style="margin:6px 0">服務台轉來電話：王○明剛才和家人商量後改變主意，還是想給 A 醫師看，希望改到 A 醫師下週的門診。</p>
+          <p class="muted">Agent 已先停下手上的工作，<strong>但收不到這則消息</strong>。要不要告訴它、怎麼處理，由你決定。</p>
+          <div class="row"><button class="btn primary sm">告訴 Agent 並重新規劃</button><button class="btn sm">照原方案繼續</button><button class="btn sm">先問 Agent 問題</button></div>
+        </div>
+      </div>
+      <div class="chat-input"><textarea placeholder="輸入要交代 Agent 的事…（Enter 送出）" aria-label="輸入訊息"></textarea><button class="btn primary">送出</button></div>
+      <div class="muted" style="padding:0 12px 10px">今天已用 1 / 100 次</div>
+    </section>
+
+    <!-- 右：系統 -->
+    <aside class="card panel" data-coach="模擬系統" data-coach-order="4" data-coach-text="Agent 用到哪個系統，哪個就會亮起。點開只是查看資料，不會觸發任何操作。">
+      <h3>用到的系統</h3>
+      <p class="muted">Agent 用到才亮起；查看不會觸發操作。</p>
+      <div class="systems">
+        <div class="sys lit"><span>請假與案件資料</span><span class="tag ok">已查 1 次</span></div>
+        <div class="sys lit"><span>HIS 掛號系統</span><span class="tag ok">已查 3 次</span></div>
+        <div class="sys lit"><span>院內作業規則庫</span><span class="tag ok">已查 9 次</span></div>
+        <div class="sys"><span>醫師排班系統</span><span class="tag">未使用</span></div>
+        <div class="sys"><span>病患聯絡與通知</span><span class="tag">未使用</span></div>
+        <div class="sys"><span>特殊安排核准紀錄</span><span class="tag">未使用</span></div>
+      </div>
+      <p class="muted desktop-only">手機版：系統面板移到對話之後，依時間軸呈現（任務 → 對話 → 結果）。</p>
+      <hr style="border:0;border-top:1px solid var(--line)">
+      <button class="btn sm" data-toggle="#d-notes">學習筆記</button> <button class="btn sm" data-toggle="#d-report">案件報告</button>
+      <div id="d-notes" hidden class="note" style="margin-top:10px">你提出疑問、修改或不同意方案的地方，系統會記在這裡，寫 Skill 時可以參考。</div>
+      <div id="d-report" hidden class="note warn" style="margin-top:10px">這份報告以你的名義交出。請對照系統資料核對，不要把「未確認」寫成「已完成」。<br><button class="btn primary sm" style="margin-top:8px" disabled>提交報告</button></div>
+    </aside>
+  </div>
+</main>
+<span class="template-badge">TEMPLATE・僅示意結構，非最終設計</span>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P1 登入 / 註冊｜AgentCraft Template</title>
+<link rel="stylesheet" href="assets/theme.css">
+
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="brand" href="index.html">AgentCraft<small>代理工坊</small></a>
+  <nav class="nav" aria-label="主選單"><a href="guide.html">使用說明</a></nav>
+</div></header>
+
+<main class="auth">
+  <section class="hero">
+    <div class="media banner tall" data-slot="登入頁主視覺（可由後台設定）"></div>
+    <h1>學會指揮 AI，解決真實工作問題</h1>
+    <p>在模擬的企業情境裡，和準備好的 AI Agent 一起完成任務，再把處理經驗整理成可重用的 Skill。</p>
+    <p class="muted">不需要程式背景・所有企業資料與操作都是教學模擬</p>
+    <a class="btn ghost" href="guide.html" style="align-self:flex-start">先看使用說明</a>
+  </section>
+  <section class="form">
+    <div class="card pad stack" style="width:min(440px,100%)">
+      <div class="tabs" data-tabs role="tablist">
+        <button role="tab" aria-selected="true" aria-controls="tab-login">已註冊</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-signup">第一次使用</button>
+      </div>
+
+      <div id="tab-login" role="tabpanel">
+        <form id="send-link-form" class="stack">
+          <div class="field"><label for="e1">Email</label><input id="e1" type="email" placeholder="you@company.com" required>
+            <div class="hint">我們會寄一封登入連結到你的信箱，不需要密碼。</div></div>
+          <button class="btn primary" type="submit">寄送登入連結</button>
+        </form>
+        <div id="link-sent" hidden class="stack">
+          <div class="note"><strong>登入連結已寄出</strong>。請在 <strong>10 分鐘內</strong>開啟信中的連結，連結<strong>只能使用一次</strong>。約 1–2 分鐘內會收到。</div>
+          <p class="muted">沒收到？請先檢查垃圾郵件匣。</p>
+          <button class="btn" disabled>重新寄送（60 秒後可用）</button>
+        </div>
+      </div>
+
+      <div id="tab-signup" role="tabpanel" hidden>
+        <form class="stack" onsubmit="return false">
+          <div class="field"><label for="c1">邀請碼</label><input id="c1" placeholder="例：AIP-7K3Q"><div class="hint">第一次使用才需要，之後只輸入 email。</div></div>
+          <div class="field"><label for="e2">Email</label><input id="e2" type="email" placeholder="you@company.com"></div>
+          <div class="field"><label for="n1">顯示名稱</label><input id="n1" placeholder="畫面上會顯示的名字"><div class="hint">註冊後暫時不能修改。</div></div>
+          <button class="btn primary" type="submit">建立帳號並寄送登入連結</button>
+        </form>
+      </div>
+      <p class="muted">錯誤訊息範例（全部繁體中文，不顯示技術字串）：<br>「連結已過期，請重新寄送。」「邀請碼無效或已使用。」</p>
+    </div>
+  </section>
+</main>
+<span class="template-badge">TEMPLATE・僅示意結構，非最終設計</span>
+<script src="assets/app.js"></script>
+</body>
+</html>

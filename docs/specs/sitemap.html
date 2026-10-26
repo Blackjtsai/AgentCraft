@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentCraft Site Map（前台＋後台）</title>
+<style>
+:root{--bg:#f6f7f9;--surface:#fff;--text:#1c2430;--text-2:#5a6678;--line:#dfe3ea;--accent:#3b5bdb;--accent-soft:#e8edff;
+--m1:#2f9e5b;--m1s:#e4f6ec;--m2:#c77700;--m2s:#fff1d6;--m3:#7048e8;--m3s:#efe9ff;--later:#868e96;--laters:#eceff3;
+--font:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161d;--surface:#1a2029;--text:#e8ecf2;--text-2:#9aa6b8;--line:#2d3644;--accent:#7c93f5;--accent-soft:#232c52;
+--m1:#4cc27f;--m1s:#173326;--m2:#e5a23a;--m2s:#3a2c12;--m3:#a78bfa;--m3s:#2a2147;--later:#9aa6b8;--laters:#222a35}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.15rem;margin:28px 0 10px}h3{font-size:1rem;margin:0 0 6px}
+.muted{color:var(--text-2);font-size:.9rem}
+.tabs{display:inline-flex;background:var(--line);padding:4px;border-radius:10px;gap:4px;margin:14px 0}
+.tabs button{border:0;background:transparent;padding:9px 20px;border-radius:7px;font:inherit;color:var(--text-2);cursor:pointer;min-height:40px}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--text);font-weight:600}
+.legend{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+.b{display:inline-block;font-size:.74rem;padding:1px 9px;border-radius:999px;font-weight:600;white-space:nowrap}
+.b.m1{background:var(--m1s);color:var(--m1)}.b.m2{background:var(--m2s);color:var(--m2)}.b.m3{background:var(--m3s);color:var(--m3)}.b.later{background:var(--laters);color:var(--later)}.b.cli{background:var(--accent-soft);color:var(--accent)}
+.root{display:inline-block;background:var(--accent);color:#fff;padding:8px 18px;border-radius:10px;font-weight:700}
+ul.tree,ul.tree ul{list-style:none;margin:0;padding-left:26px;position:relative}
+ul.tree{padding-left:0;margin-top:10px}
+ul.tree ul::before{content:"";position:absolute;left:10px;top:0;bottom:14px;border-left:2px solid var(--line)}
+ul.tree li{position:relative;margin:8px 0}
+ul.tree ul>li::before{content:"";position:absolute;left:-16px;top:18px;width:16px;border-top:2px solid var(--line)}
+.node{display:inline-block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 12px;max-width:100%}
+.node .t{font-weight:600}.node .d{display:block;color:var(--text-2);font-size:.84rem}
+.node .code{color:var(--accent);font-weight:700;margin-right:6px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.flow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}.flow .node{padding:6px 10px}.arrow{color:var(--text-2)}
+[hidden]{display:none!important}
+.open li{margin:4px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>AgentCraft（代理工坊）Site Map</h1>
+  <p class="muted">版本 v0.1 草稿 ／ 2026-10-24 ／ 請確認頁面、階段與角色。原始文字版：<code>docs/specs/SITEMAP.md</code>。</p>
+  <div class="legend">
+    <span class="b m1">M1 MVP1・2026/11 底・300 人</span>
+    <span class="b m2">M2 MVP2・2027/03 底</span>
+    <span class="b m3">M3 正式版・2027/05 上線</span>
+    <span class="b later">預留・下一階段不實作</span>
+    <span class="b cli">CLI / API（無畫面）</span>
+  </div>
+  <div class="tabs" data-tabs role="tablist">
+    <button role="tab" aria-selected="true" aria-controls="front">前台（學員端）</button>
+    <button role="tab" aria-selected="false" aria-controls="back">後台（管理端）</button>
+    <button role="tab" aria-selected="false" aria-controls="confirm">待確認事項</button>
+  </div>
+
+  <!-- ============ 前台 ============ -->
+  <section id="front">
+    <span class="root">前台　學員與情境製作者</span>
+    <ul class="tree">
+      <li><div class="node"><span class="t"><span class="code">P1</span>登入 / 註冊</span> <span class="b m1">M1</span>
+        <span class="d">已註冊：只輸入 email → 寄登入連結（10 分鐘、一次性）｜首次：邀請碼 + email + 顯示名稱</span></div>
+        <ul>
+          <li><div class="node"><span class="t"><span class="code">P1a</span>連結驗證頁</span> <span class="b m1">M1</span><span class="d">過期 / 已使用 → 繁中說明＋重新寄送</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">P1b</span>SSO 回呼（Google / Microsoft）</span> <span class="b m2">M2</span><span class="d">MVP1 不做</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">P1c</span>首次註冊</span> <span class="b m1">M1</span></div></li>
+        </ul>
+      </li>
+      <li><div class="node"><span class="t"><span class="code">P2</span>我的學習</span> <span class="b m1">M1</span>
+        <span class="d">登入後首頁（尚未開始任何情境者直接到 P3）：繼續學習／待修正／已完成／探索新情境</span></div></li>
+      <li><div class="node"><span class="t"><span class="code">P3</span>探索情境（依產業）</span> <span class="b m1">M1</span><span class="d">產業卡片；無情境者「準備中」不可開；企業共通列最後</span></div>
+        <ul>
+          <li><div class="node"><span class="t"><span class="code">P4</span>情境選擇</span> <span class="b m1">M1</span><span class="d">情境卡（封面素材）：摘要、練習重點、預估時間、個人狀態</span></div>
+            <ul>
+              <li><div class="node"><span class="t"><span class="code">P5</span>案件工作台（第一關）</span> <span class="b m1">M1</span>
+                <span class="d">任務清單｜對話與步驟條｜方案卡｜情境事件｜用到的系統｜抽屜：任務卡、Agent 界線、提示、學習筆記、案件報告</span></div></li>
+              <li><div class="node"><span class="t"><span class="code">P6</span>撰寫並驗證 Skill（第二關）</span> <span class="b m1">M1</span><span class="d">第一關完成才開放；兩種模式：</span></div>
+                <ul>
+                  <li><div class="node"><span class="t">編輯模式</span> <span class="b m1">M1</span><span class="d">六欄、版本、啟用、AI 起草、匯出</span></div></li>
+                  <li><div class="node"><span class="t">換案驗證模式</span> <span class="b m1">M1</span><span class="d">一般新案＋例外新案，兩案都過才完成；測試紀錄</span></div></li>
+                </ul></li>
+            </ul></li>
+        </ul>
+      </li>
+      <li><div class="node"><span class="t"><span class="code">P7</span>我的成果</span> <span class="b m1">M1</span><span class="d">案件報告、Skill 最終版、換案紀錄；只顯示當前有效版本</span></div></li>
+      <li><div class="node"><span class="t"><span class="code">G1</span>使用教學</span> <span class="b m1">M1</span><span class="d">靜態圖文三步＋Agent 界線＋常見問題；登入前後都可看｜短動畫 <span class="b m2">M2</span></span></div></li>
+      <li><div class="node"><span class="t">首次互動導覽</span> <span class="b m1">M1</span><span class="d">第一次進 P5 自動出現，可跳過、可重看；「已看過」存帳號</span></div></li>
+      <li><div class="node"><span class="t"><span class="code">S1</span>情境製作 Studio</span> <span class="b m1">M1</span><span class="d">用對話做任務卡 → 情境包 → 發布前檢查 → 自己試用</span></div></li>
+      <li><div class="node"><span class="t">個人檔案</span> <span class="b later">預留 M3</span><span class="d">修改顯示名稱；P7 入口移至此</span></div></li>
+      <li><div class="node"><span class="t">Playground（開放式廚房）</span> <span class="b later">預留</span><span class="d">獨立入口，不影響學習紀錄；本階段不做</span></div></li>
+      <li><div class="node"><span class="t">共用：錯誤 / 空狀態 / 用量用盡</span> <span class="b m1">M1</span><span class="d">全部繁體中文，不顯示技術字串</span></div></li>
+    </ul>
+    <h2>學員主流程</h2>
+    <div class="flow">
+      <span class="node">P1 登入</span><span class="arrow">→</span><span class="node">曾開始情境？</span><span class="arrow">是→</span><span class="node">P2 我的學習</span><span class="arrow">／否→</span><span class="node">P3 探索</span>
+      <span class="arrow">→</span><span class="node">P4 情境</span><span class="arrow">→</span><span class="node">P5 第一關</span><span class="arrow">→（完成）</span><span class="node">P6 第二關</span><span class="arrow">→</span><span class="node">P7 成果</span>
+    </div>
+    <p class="muted">規則：第一關完成前不能進 P6；隨時可在 P2 / P3 / P7 切換；進行中情境可在 P5 / P6 間切換。「繼續學習」依狀態接回 P5、P6 或進行中的換案測試。</p>
+    <p class="muted"><a href="../../web/template/index.html">→ 前台 Template（可點選瀏覽）</a></p>
+  </section>
+
+  <!-- ============ 後台 ============ -->
+  <section id="back" hidden>
+    <div class="card" style="margin-bottom:14px"><strong>階段說明</strong>
+      <table><tr><td><span class="b m1">M1</span></td><td><strong>MVP1 就有後台畫面（單一「管理員」角色）</strong>：A0 殼與登入、A1 帳號與邀請碼、A2 情境管理（動態新增 / 編輯 / 上下線、上傳素材到 NAS）、A3 用量與使用紀錄、A4 稽核紀錄。詳見 <code>docs/design/MVP1-SCOPE.md</code></td></tr>
+      <tr><td><span class="b m2">M2</span></td><td>後台最小版：取代 CLI（帳號與邀請碼、情境管理、用量、系統健康、稽核）</td></tr>
+      <tr><td><span class="b m3">M3</span></td><td>完整版：多組織、授權、模型目錄、成效分析（依 POC 的 Org / Seat / Role / Credits 提案，討論版）</td></tr></table></div>
+    <div class="card" style="margin-bottom:14px"><h3>MVP1 管理後台（單一管理員角色，這是 11 月底要交付的）</h3>
+      <ul class="tree">
+        <li><div class="node"><span class="t"><span class="code">A0</span>後台殼與 admin 登入</span> <span class="b m1">M1</span><span class="d">只有一個 <code>admin</code> 帳號、帳密登入（不走 email 連結）；開發期密碼固定，雲端部署前必須更換</span></div></li>
+        <li><div class="node"><span class="t"><span class="code">A1</span>帳號與邀請碼</span> <span class="b m1">M1</span><span class="d">產生 / 停用邀請碼與使用狀況；帳號停用啟用；demo 帳號；個別用量上限</span></div></li>
+        <li><div class="node"><span class="t"><span class="code">A2</span>情境管理</span> <span class="b m1">M1</span><span class="d">新增、編輯（新版本）、上下線；上線前檢查；上傳封面與橫幅（NAS）；預覽</span></div></li>
+        <li><div class="node"><span class="t"><span class="code">A3</span>用量與使用紀錄</span> <span class="b m1">M1</span><span class="d">每人每日用量、使用中人數、失敗紀錄、進度摘要（不含對話逐字稿）</span></div></li>
+        <li><div class="node"><span class="t"><span class="code">A4</span>稽核紀錄</span> <span class="b m1">M1</span><span class="d">管理操作只增不改</span></div></li>
+      </ul>
+      <p class="muted">下方「系統後台 / Org 後台」是 POC 提案的完整版（多組織、Seat、Credits、模型目錄），屬 MVP2 以後，MVP1 只預留資料欄位。</p></div>
+    <div class="grid">
+      <div class="card"><h3>系統後台（System Admin）— MVP2 以後</h3>
+        <ul class="tree">
+          <li><div class="node"><span class="t"><span class="code">Y1</span>平台概況</span> <span class="b m2">M2 簡版</span><span class="b m3">M3</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">Y2</span>Org 管理</span> <span class="b m2">M2 最小</span><span class="d">建立 / 停用 Org、Owner、Seat 數、Credits 池</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">Y3</span>Credits 與成本</span> <span class="b m3">M3</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">Y4</span>模型目錄</span> <span class="b m3">M3</span><span class="d">LLM 現況：Gemini API</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">Y5</span>訓練營運（漏斗、卡關點）</span> <span class="b m3">M3</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">Y6</span>情境管理 / 內容營運</span> <span class="b m1">M1 = A2</span>
+            <span class="d">動態新增、編輯（新版本）、上下線；上傳封面與橫幅（NAS）；上線前檢查結果</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">Y7</span>系統健康</span> <span class="b m2">M2</span><span class="d">Agent、Twin、LLM 錯誤率與延遲</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">Y8</span>稽核紀錄</span> <span class="b m2">M2 起</span><span class="d">只增不改</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">Y9</span>支援工具</span> <span class="b m1">M1 = A1</span><span class="d">邀請碼、demo 帳號、個別用量上限；重設案件、以 User 身分檢視（M2，留稽核）</span></div></li>
+        </ul></div>
+      <div class="card"><h3>Org 後台（Org Owner / Admin / Producer）— MVP2 以後</h3>
+        <ul class="tree">
+          <li><div class="node"><span class="t"><span class="code">O1</span>概況</span> <span class="b m3">M3</span><span class="d">Seat 使用、待接受邀請、Credits</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">O2</span>成員與 Seat</span> <span class="b m2">M2 最小</span><span class="d">邀請 / 停用、分配 Seat、指派角色</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">O3</span>Credits 與個人上限</span> <span class="b m3">M3</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">O4</span>模型：核准清單與預設</span> <span class="b m3">M3</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">O5</span>學習進度（不含對話逐字稿）</span> <span class="b m2">M2</span></div></li>
+          <li><div class="node"><span class="t"><span class="code">O6</span>情境與發布（Producer）</span> <span class="b m3">M3</span><span class="d">對應 Studio 發布到自己 Org</span></div></li>
+        </ul>
+        <h3 style="margin-top:18px">角色</h3>
+        <table>
+          <tr><th>System Admin</th><td>平台維運，不屬任何 Org</td></tr>
+          <tr><th>Org Owner / Admin</th><td>管理自己 Org 的成員、Seat、上限</td></tr>
+          <tr><th>Producer</th><td>建立與發布自己 Org 的情境</td></tr>
+          <tr><th>平台工程師</th><td>M1 以 CLI 代替後台畫面</td></tr>
+        </table>
+        <p class="muted">隱私：Org Admin 看不到學員對話逐字稿；System Admin 預設也不能讀。</p>
+      </div>
+    </div>
+    <h2>前後台對應</h2>
+    <table>
+      <tr><th>前台</th><th>後台</th></tr>
+      <tr><td>邀請碼註冊</td><td>Y9（M1 CLI）；M2 起 O2 邀請</td></tr>
+      <tr><td>P3 / P4 顯示「準備中」或上架</td><td>Y6 情境上下線</td></tr>
+      <tr><td>情境封面、橫幅</td><td>Y6 上傳到 NAS（跟隨情境版本）</td></tr>
+      <tr><td>每日用量被擋</td><td>M1 CLI 調整；M3 起 O3</td></tr>
+      <tr><td>Studio 發布</td><td>O6（M3）</td></tr>
+    </table>
+    <p class="muted">M1 Schema 要預留：組織歸屬、Seat / 角色、LLM token 計量、稽核表、情境版本（詳見 SITEMAP.md §3.7）。</p>
+  </section>
+
+  <!-- ============ 待確認 ============ -->
+  <section id="confirm" hidden>
+    <div class="card"><h3>請確認</h3>
+      <ol class="open">
+        <li>前台頁面清單與流程是否正確？尤其「P1 只輸入 email 即可登入」與「尚未開始者直接進 P3」。</li>
+        <li><strong>已確認</strong>：POC 上有的功能 MVP1 全做（含 Studio）、後台 A0–A4 五頁全做、後台只有 admin 一個帳號、300 人試用放雲端、最後一週才部署。</li>
+        <li><strong>admin 密碼固定 123 僅限本機開發</strong>；雲端部署前必須更換，這項是否列為部署週必查？</li>
+        <li>「50 人」是<strong>同時使用 50 人</strong>，還是 50 個測試帳號？（我先按同時 50 人排壓測）</li>
+        <li>情境素材由誰製作？封面、橫幅、產業預設圖三個位置夠不夠？</li>
+        <li>後台角色（System Admin / Org Owner / Admin / Producer）是否採用 POC 提案？提案本身為討論版。</li>
+        <li>MVP1 要開放哪些情境？非醫療業要等 Orbit 提供模擬系統。</li>
+        <li>個人檔案、Playground 維持預留不實作？</li>
+      </ol></div>
+  </section>
+</div>
+<script>
+document.querySelectorAll('[data-tabs]').forEach(function(t){
+  var bs=t.querySelectorAll('button[aria-controls]');
+  bs.forEach(function(b){b.addEventListener('click',function(){
+    bs.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');document.getElementById(x.getAttribute('aria-controls')).hidden=x!==b;});
+  });});
+});
+</script>
+</body>
+</html>

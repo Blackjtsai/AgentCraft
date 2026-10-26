@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POC 網站地圖 · Tree</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Noto+Serif:ital@0;1&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:   #f5f5f5;   /* white-smoke */
+      --color-ink:     #2d3142;   /* jet-black */
+      --color-muted:   #4f5d75;   /* blue-slate */
+      --color-accent:  #bf4520;   /* burnt-tangerine */
+      --font-sans:     'Geist', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+      --font-serif:    'Instrument Serif', 'Noto Serif', 'Noto Serif TC', serif;
+      --font-mono:     'Geist Mono', ui-monospace, monospace;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+
+    .frame { max-width: 1280px; width: 100%; }
+    /* The SVG holds its readable width (min-width == the viewBox width, so the
+       type ramp is never silently scaled down). This wrapper lets a narrow
+       screen scroll the diagram instead of the whole page. */
+    .diagram-container { width: 100%; overflow-x: auto; }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 1.5rem;
+    }
+
+    svg { width: 100%; min-width: 1280px; display: block; }
+    @media print {
+      .diagram-container { overflow-x: visible; }
+      svg { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Tree · Site map · POC</p>
+    <h1>AIP_Education POC 網站地圖</h1>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="poc-sitemap-title poc-sitemap-desc">
+        <title id="poc-sitemap-title">AIP_Education POC 網站地圖</title>
+        <desc id="poc-sitemap-desc">POC 學員端的頁面樹與每頁內容：根下分登入、我的學習、探索領域、我的成果、情境製作五條線；探索領域往下是情境選擇，再分出案件工作台與第一關完成後才開放的撰寫並驗證 Skill。</desc>
+        <rect width="100%" height="100%" fill="#f5f5f5"/>
+        <path d="M 640 164 V 220" stroke="#4f5d75" stroke-width="1" fill="none"/>
+        <path d="M 640 192 H 184 Q 176 192 176 200 V 220" stroke="#4f5d75" stroke-width="1" fill="none"/>
+        <path d="M 640 192 H 1096 Q 1104 192 1104 200 V 220" stroke="#4f5d75" stroke-width="1" fill="none"/>
+        <path d="M 408 192 V 220" stroke="#4f5d75" stroke-width="1" fill="none"/>
+        <path d="M 872 192 V 220" stroke="#4f5d75" stroke-width="1" fill="none"/>
+        <path d="M 640 320 V 364" stroke="#4f5d75" stroke-width="1" fill="none"/>
+        <path d="M 640 464 V 488" stroke="#4f5d75" stroke-width="1" fill="none"/>
+        <path d="M 640 488 H 532 Q 524 488 524 496 V 512" stroke="#4f5d75" stroke-width="1" fill="none"/>
+        <path d="M 640 488 H 748 Q 756 488 756 496 V 512" stroke="#4f5d75" stroke-width="1" fill="none" stroke-dasharray="5,4"/>
+        <rect x="536" y="64" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="536" y="64" width="208" height="100" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="544" y="72" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="560" y="81" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">ROOT</text>
+        <text x="640" y="104" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">AIP_Education</text>
+        <text x="640" y="118" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">aip-education.zeabur.app</text>
+        <text x="640" y="138" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">Agentic AI 人才培育網站</text>
+        <text x="640" y="154" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">（產品規劃團隊 POC）</text>
+        <rect x="72" y="220" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="72" y="220" width="208" height="100" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="80" y="228" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="94" y="237" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">P1</text>
+        <text x="176" y="260" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">登入 / 註冊</text>
+        <text x="176" y="274" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">invite code · account</text>
+        <text x="176" y="294" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">首次：邀請碼＋帳密</text>
+        <text x="176" y="310" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">已有帳號：直接登入</text>
+        <rect x="304" y="220" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="304" y="220" width="208" height="100" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="312" y="228" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="326" y="237" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">P2</text>
+        <text x="408" y="260" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">我的學習</text>
+        <text x="408" y="274" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">post-login home</text>
+        <text x="408" y="294" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">情境卡含三段進度</text>
+        <text x="408" y="310" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">與下一步，可繼續學習</text>
+        <rect x="536" y="220" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="536" y="220" width="208" height="100" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="544" y="228" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="558" y="237" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">P3</text>
+        <text x="640" y="260" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">探索領域</text>
+        <text x="640" y="274" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">#/explore</text>
+        <text x="640" y="294" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">5 個領域，金融、零售、</text>
+        <text x="640" y="310" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">企業共通顯示準備中</text>
+        <rect x="768" y="220" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="768" y="220" width="208" height="100" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="776" y="228" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="790" y="237" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">P7</text>
+        <text x="872" y="260" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">我的成果</text>
+        <text x="872" y="274" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">#/results</text>
+        <text x="872" y="294" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">案件報告、Skill、換案</text>
+        <text x="872" y="310" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">驗證三區（目前為空）</text>
+        <rect x="1000" y="220" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="1000" y="220" width="208" height="100" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="1008" y="228" width="44" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="1030" y="237" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">STUDIO</text>
+        <text x="1104" y="260" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">情境製作</text>
+        <text x="1104" y="274" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">#/studio</text>
+        <text x="1104" y="294" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">左：我的情境　中：對話</text>
+        <text x="1104" y="310" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">右：任務卡、藍圖、版本</text>
+        <rect x="536" y="364" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="536" y="364" width="208" height="100" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="544" y="372" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="558" y="381" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">P4</text>
+        <text x="640" y="404" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">情境選擇</text>
+        <text x="640" y="418" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">#/industry/{id}</text>
+        <text x="640" y="438" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">醫療 3、製造 1 個情境</text>
+        <text x="640" y="454" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">預估 3–6 小時</text>
+        <rect x="420" y="512" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="420" y="512" width="208" height="100" rx="6" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+        <rect x="428" y="520" width="28" height="12" rx="2" fill="transparent" stroke="rgba(191,69,32,0.50)" stroke-width="0.8"/>
+        <text x="442" y="529" fill="#bf4520" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">P5</text>
+        <text x="524" y="552" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">案件工作台</text>
+        <text x="524" y="566" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">#/work/{scenario-id}</text>
+        <text x="524" y="586" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">任務／Agent 對話／系統</text>
+        <text x="524" y="602" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">三欄；方案卡同意才執行</text>
+        <rect x="652" y="512" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="652" y="512" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="660" y="520" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="674" y="529" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">P6</text>
+        <text x="756" y="552" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">撰寫並驗證 Skill</text>
+        <text x="756" y="566" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">locked · not captured</text>
+        <text x="756" y="586" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">依規格：編輯、換案驗證</text>
+        <text x="756" y="602" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">兩種模式，尚未實測</text>
+        <text x="768" y="116" fill="#4f5d75" font-size="14" font-style="italic" font-family="'Instrument Serif', 'Noto Serif', 'Noto Serif TC', serif">頁首「使用說明」全站可開</text>
+        <text x="884" y="556" fill="#4f5d75" font-size="14" font-style="italic" font-family="'Instrument Serif', 'Noto Serif', 'Noto Serif TC', serif">第一關完成後</text>
+        <text x="884" y="576" fill="#4f5d75" font-size="14" font-style="italic" font-family="'Instrument Serif', 'Noto Serif', 'Noto Serif TC', serif">才開放第二關</text>
+        <line x1="72" y1="640" x2="1208" y2="640" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+        <text x="72" y="660" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.18em">LEGEND</text>
+        <rect x="72" y="676" width="14" height="10" rx="2" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+        <text x="92" y="685" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif">核心頁（第一關）</text>
+        <rect x="232" y="676" width="14" height="10" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <text x="252" y="685" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif">已擷取畫面的頁面</text>
+        <rect x="404" y="676" width="14" height="10" rx="2" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="424" y="685" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif">尚未取得畫面（說明依規格文件）</text>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

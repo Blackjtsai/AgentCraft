@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P6 撰寫並驗證 Skill｜AgentCraft Template</title>
+<link rel="stylesheet" href="assets/theme.css">
+
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="brand" href="index.html">AgentCraft<small>代理工坊</small></a>
+  <nav class="nav" aria-label="主選單"><a href="learning.html" aria-current="page">我的學習</a><a href="explore.html">探索情境</a><a href="results.html">我的成果</a><a href="guide.html">使用說明</a></nav>
+  <span class="user">小明（顯示名稱）</span><a class="btn ghost sm" href="login.html">登出</a>
+</div></header>
+
+<main class="container stack" style="padding-top:16px">
+  <p class="muted" style="margin:0"><a href="learning.html">我的學習</a> › 情境 1 › 第二關</p>
+  <div class="row spread"><h1 style="margin:0">撰寫並驗證 Skill</h1>
+    <div class="stepper"><span class="step done"><span class="dot">✓</span>第一關</span><span class="step-sep"></span><span class="step now"><span class="dot">2</span>第二關</span></div></div>
+  <div class="tabs" data-tabs role="tablist" style="align-self:flex-start">
+    <button role="tab" aria-selected="true" aria-controls="p-edit">編輯 Skill</button>
+    <button role="tab" aria-selected="false" aria-controls="p-test">換案驗證</button>
+  </div>
+
+  <div id="p-edit" class="grid" style="grid-template-columns:minmax(0,1fr) 300px">
+    <section class="card pad stack">
+      <div class="row spread"><h2 style="margin:0">Skill 內容</h2><div class="row"><span class="tag">版本 v1・草稿</span><button class="btn sm">請 AI 起草</button></div></div>
+      <div class="note">寫下處理這類案件的<strong>方法</strong>，不要寫死第一關的醫師、日期、病患或名額。保存並啟用後，才會用它做換案測試。</div>
+      <div class="field"><label for="sn">Skill 名稱</label><input id="sn" placeholder="例如：門診異動協調"></div>
+      <div class="field"><label for="f1">1. 名稱、用途與使用時機</label><textarea id="f1" placeholder="（請寫清楚）適用哪類門診異動？學員負責範圍如何確認？哪些工作需交由其他人員？"></textarea></div><div class="field"><label for="f2">2. 輸入與資料來源</label><textarea id="f2" placeholder="（請寫清楚）如何取得案件、醫師、門診及病患掛號資訊？如何核對排班、名額、規則、回覆與核准？"></textarea></div><div class="field"><label for="f3">3. 處理步驟</label><textarea id="f3" placeholder="（請寫清楚）如何先辨識代診／停診／改掛及已發通知？何時維持原掛號、何時另行安排？"></textarea></div><div class="field"><label for="f4">4. 判斷與例外規則</label><textarea id="f4" placeholder="（請寫清楚）如何處理名額不足、未接聽、意願不明、資料矛盾、需醫療判斷、缺核准及操作失敗？"></textarea></div><div class="field"><label for="f5">5. 輸出要求</label><textarea id="f5" placeholder="（請寫清楚）如何逐人呈現方案、同意與核准、操作結果、通知及待辦？如何保留來源？"></textarea></div><div class="field"><label for="f6">6. 操作界線</label><textarea id="f6" placeholder="（請寫清楚）如何依操作界線與本次院內規則處理方案確認、病患同意、例外核准及交接？"></textarea></div>
+      <div class="field"><label for="cn">這一版改了什麼</label><input id="cn" placeholder="例如：例外案沒有處理加號被駁回，補上駁回後重新聯絡病患"></div>
+      <div class="row"><button class="btn primary">保存並啟用</button><button class="btn">只保存草稿</button><button class="btn ghost">匯出 Markdown</button></div>
+    </section>
+    <aside class="stack">
+      <section class="card pad"><h3>第一關回顧</h3><p class="muted">寫 Skill 時可以回頭看：</p>
+        <p><a href="#">案件報告</a><br><a href="#">學習筆記（2 筆）</a><br><a href="#">對話與操作紀錄</a></p></section>
+      <section class="card pad"><h3>版本</h3><table class="simple"><tr><td>v1</td><td><span class="tag">草稿</span></td></tr></table>
+        <p class="muted">Skill 改版後，先前通過的結果不再算數，需重測兩案。</p></section>
+    </aside>
+  </div>
+
+  <section id="p-test" hidden class="card pad stack">
+    <h2 style="margin:0">換案驗證</h2>
+    <p class="muted">用兩個沒看過的新案測試同一版 Skill。<strong>兩案都通過</strong>，這個情境才算完成。測試中 Agent 的方案由系統自動同意。</p>
+    <table class="simple"><thead><tr><th>案件</th><th>目前 Skill 版本</th><th>結果</th><th></th></tr></thead><tbody>
+      <tr><td>一般新案</td><td>v1</td><td><span class="tag">尚未測試</span></td><td><button class="btn primary sm">開始測試</button></td></tr>
+      <tr><td>例外新案</td><td>v1</td><td><span class="tag">尚未測試</span></td><td><button class="btn primary sm">開始測試</button></td></tr>
+    </tbody></table>
+    <div class="note warn">測試進行中不會給提示；結束後一次列出哪些地方沒通過、依據是什麼。</div>
+    <h3>測試紀錄</h3><p class="muted">尚無紀錄。每次測試會保留使用的 Skill 版本、案件與結果。</p>
+  </section>
+</main>
+<style>@media (max-width:900px){#p-edit{grid-template-columns:1fr!important}}</style>
+<span class="template-badge">TEMPLATE・僅示意結構，非最終設計</span>
+<script src="assets/app.js"></script>
+</body>
+</html>

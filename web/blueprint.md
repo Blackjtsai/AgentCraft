@@ -14,7 +14,11 @@
 
 ```
 web/
-├── [待實作後補充]
+├── template/              # 前台結構範本（純 HTML/CSS，供確認頁面與資訊層級；UI/UX 由團隊自行設計）
+│   ├── index.html         # 範本總覽
+│   ├── login / learning / explore / scenarios / workbench / skill / results / guide .html
+│   └── assets/theme.css   # 設計變數在 :root，覆寫即可換風格
+└── [Next.js 專案待 Layer 2 起實作]
 ```
 
 ## 對外介面

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>範本總覽｜AgentCraft Template</title>
+<link rel="stylesheet" href="assets/theme.css">
+
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="brand" href="index.html">AgentCraft<small>代理工坊</small></a>
+  <nav class="nav" aria-label="主選單"><a href="guide.html">使用說明</a></nav>
+</div></header>
+
+<main class="container stack" style="padding-top:24px">
+  <h1>前台 Template 總覽</h1>
+  <div class="note">這是<strong>結構與資訊層級的骨架</strong>，用來確認每一頁有哪些區塊、怎麼引導學員。顏色、字型、圓角都是 <code>assets/theme.css</code> 開頭的變數，你們的 UI/UX 設計直接覆寫即可，不必改 HTML。內容文字取自 med-01 情境，僅供示意。</div>
+  <div class="grid cols-2">
+    <section class="card pad stack"><h2>學員主線</h2>
+      <p><a href="login.html">P1 登入 / 註冊</a>（邀請碼 + email 連結）</p>
+      <p><a href="learning.html">P2 我的學習</a></p>
+      <p><a href="explore.html">P3 探索情境（產業）</a>　→　<a href="scenarios.html">P4 情境選擇</a></p>
+      <p><a href="workbench.html">P5 案件工作台（第一關）</a>　<span class="tag accent">重點頁</span></p>
+      <p><a href="skill.html">P6 撰寫並驗證 Skill（第二關）</a></p>
+      <p><a href="results.html">P7 我的成果</a></p>
+      <p><a href="guide.html">G1 使用教學</a></p>
+    </section>
+    <section class="card pad stack"><h2>看這份範本時請確認</h2>
+      <ul>
+        <li>每頁的<strong>區塊與順序</strong>對不對（對照 Site Map）。</li>
+        <li>P5 是否符合「<strong>每個時刻只問一件事</strong>」：任務清單、步驟條、方案卡分層、情境事件。</li>
+        <li>情境<strong>素材位置</strong>（虛線漸層區塊）夠不夠、位置對不對。</li>
+        <li>手機寬度（縮到 390px）是否仍能完成全部操作。</li>
+        <li>教學導覽示意：在 P5 按「播放首次導覽」。</li>
+      </ul>
+      <p class="muted">右下角黑色標籤是範本標記，正式版移除。</p>
+    </section>
+  </div>
+  <p class="footer">AgentCraft 前台 Template v0.1 ／ 2026-10-24</p>
+</main>
+<span class="template-badge">TEMPLATE・僅示意結構，非最終設計</span>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P2 我的學習｜AgentCraft Template</title>
+<link rel="stylesheet" href="assets/theme.css">
+
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="brand" href="index.html">AgentCraft<small>代理工坊</small></a>
+  <nav class="nav" aria-label="主選單"><a href="learning.html" aria-current="page">我的學習</a><a href="explore.html">探索情境</a><a href="results.html">我的成果</a><a href="guide.html">使用說明</a></nav>
+  <span class="user">小明（顯示名稱）</span><a class="btn ghost sm" href="login.html">登出</a>
+</div></header>
+
+<main class="container stack" style="padding-top:24px">
+  <div><h1>我的學習</h1><p class="muted">你正在學的情境、需要修正的地方，以及下一步。</p></div>
+
+  <section class="stack"><h2>繼續學習</h2>
+    <article class="card" style="display:grid;grid-template-columns:200px 1fr;overflow:hidden" id="continue-card">
+      <div class="media cover" data-slot="情境封面" style="border-radius:0;aspect-ratio:auto;min-height:150px"></div>
+      <div class="pad stack" style="padding:16px 20px">
+        <div class="row"><span class="tag">醫療業</span><span class="tag">跨系統協調</span><span class="tag accent">第一關進行中</span></div>
+        <h3>門診異動的跨系統協調</h3>
+        <div class="stepper"><span class="step now"><span class="dot">1</span>第一關・完成案件</span><span class="step-sep"></span><span class="step locked"><span class="dot">2</span>撰寫 Skill</span><span class="step-sep"></span><span class="step locked"><span class="dot">3</span>換案驗證</span></div>
+        <div class="note"><strong>下一步</strong>：回到案件工作台，完成案件並提交報告。<span class="muted">　上次活動 10/22 17:40</span></div>
+        <div><a class="btn primary" href="workbench.html">繼續學習</a></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="stack"><h2>待修正 / 待重測</h2>
+    <div class="card pad"><p class="muted" style="margin:0">目前沒有需要修正的項目。換案驗證有未通過時，會出現在這裡並指出是哪一版 Skill、哪個案件。</p></div>
+  </section>
+
+  <section class="stack"><h2>已完成</h2>
+    <div class="card pad"><p class="muted" style="margin:0">完成的情境會列在這裡，並連到「我的成果」。</p></div>
+  </section>
+
+  <section class="card pad row spread"><div><h3>探索新情境</h3><p class="muted" style="margin:0">從熟悉的產業開始，挑一個任務。</p></div><a class="btn" href="explore.html">探索情境</a></section>
+  <p class="muted">進站規則：尚未開始任何情境的學員，登入後直接進入「探索情境」。</p>
+</main>
+<style>@media (max-width:640px){#continue-card{grid-template-columns:1fr!important}}</style>
+<span class="template-badge">TEMPLATE・僅示意結構，非最終設計</span>
+<script src="assets/app.js"></script>
+</body>
+</html>

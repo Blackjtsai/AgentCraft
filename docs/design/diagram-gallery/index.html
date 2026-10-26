@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+============================================================
+檔案名稱：index.html
+中文名稱：設計圖庫導覽首頁
+功能說明：列出 diagram-gallery 內所有圖，縮圖預覽，點擊在新分頁開啟
+所屬模組：docs/design/diagram-gallery
+建立日期：2026-10-26
+修改日期：2026-10-26
+開發者　：Claude Code
+新增圖時：在下方 DIAGRAMS 陣列加一筆即可
+============================================================
+-->
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentCraft 設計圖庫</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Noto+Serif+TC:wght@400&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --paper: #f5f5f5; --ink: #2d3142; --muted: #4f5d75; --accent: #bf4520;
+    --rule: rgba(45,49,66,0.12);
+    --font-sans: 'Geist', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+    --font-serif: 'Instrument Serif', 'Noto Serif TC', serif;
+    --font-mono: 'Geist Mono', ui-monospace, monospace;
+  }
+  body { font-family: var(--font-sans); background: var(--paper); color: var(--ink); padding: 3rem 2rem 4rem; }
+  .page { max-width: 1200px; margin: 0 auto; }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+  h1 { font-family: var(--font-serif); font-size: clamp(1.75rem, 2.4vw + 0.75rem, 2.25rem); font-weight: 400; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.5rem; }
+  .sub { color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 2rem; max-width: 720px; }
+  h2 { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; margin: 2rem 0 0.75rem; padding-bottom: 6px; border-bottom: 1px solid var(--rule); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; }
+  .card:hover, .card:focus-visible { border-color: var(--ink); outline: none; }
+  .thumb { position: relative; aspect-ratio: 16 / 10; background: var(--paper); border-bottom: 1px solid var(--rule); overflow: hidden; }
+  .thumb iframe { position: absolute; top: 0; left: 0; width: 1600px; height: 1000px; border: 0; transform-origin: top left; pointer-events: none; }
+  .body { padding: 12px 14px 14px; }
+  .num { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--muted); }
+  .title { font-size: 14px; font-weight: 600; margin: 2px 0 4px; }
+  .desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; justify-content: space-between; gap: 8px; padding: 8px 14px 10px; border-top: 1px solid var(--rule); font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+  .tag { color: var(--accent); }
+  .foot { margin-top: 2.5rem; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="eyebrow">Diagram Gallery · AgentCraft</p>
+  <h1>設計圖庫</h1>
+  <p class="sub">網站地圖相關的圖。點卡片在新分頁開啟完整圖；縮圖只顯示左上角範圍。</p>
+  <div id="root"></div>
+  <p class="foot" id="foot"></p>
+</div>
+
+<script>
+  // 新增圖：在這裡加一筆；group 對應下方 GROUPS
+  const GROUPS = {
+    current: '現行版本 · AgentCraft 網站地圖',
+    earlier: '早期版本 · 參考用'
+  };
+  const DIAGRAMS = [
+    { group: 'current', file: 'diagram-sitemap.html', title: '前後台網站地圖（第一層）', desc: '前台與後台上下兩區塊；前台含登入、註冊、情境選擇到案件工作台，後台含系統後台與 Org 後台。', type: 'TREE · L1' },
+    { group: 'current', file: 'diagram-sitemap-front-l2.html', title: '前台網站地圖（第二層）', desc: '七個主要頁面各自展開子頁面與頁內內容，另列全站共用與獨立頁。', type: 'TREE · L2' },
+    { group: 'current', file: 'diagram-sitemap-admin-l2.html', title: '後台網站地圖（第二層）', desc: '系統後台 Y1–Y9 與 Org 後台 O1–O6，每頁列出內容與所屬階段。', type: 'CARDS · L2' },
+    { group: 'earlier', file: 'diagram-poc-sitemap.html', title: 'POC 網站地圖', desc: 'POC（AIP_Education）學員端實際看到的頁面，依截圖與規格整理。', type: 'TREE · POC' },
+    { group: 'earlier', file: 'diagram-admin-sitemap.html', title: '後台管理網站地圖（MVP1 A0–A4 版）', desc: 'MVP1 單一 admin 的五個畫面，加上後續階段的 Org 後台與系統後台。', type: 'TREE · ADMIN' }
+  ];
+
+  const root = document.getElementById('root');
+  let n = 0;
+  Object.keys(GROUPS).forEach(g => {
+    const items = DIAGRAMS.filter(d => d.group === g);
+    if (!items.length) return;
+    const h = document.createElement('h2'); h.textContent = GROUPS[g]; root.appendChild(h);
+    const grid = document.createElement('div'); grid.className = 'grid'; root.appendChild(grid);
+    items.forEach(d => {
+      n += 1;
+      const a = document.createElement('a');
+      a.className = 'card'; a.href = d.file; a.target = '_blank'; a.rel = 'noopener';
+      a.innerHTML =
+        '<div class="thumb"><iframe src="' + d.file + '" loading="lazy" scrolling="no" tabindex="-1" title="' + d.title + ' 預覽"></iframe></div>' +
+        '<div class="body"><div class="num">' + String(n).padStart(2, '0') + '</div>' +
+        '<div class="title">' + d.title + '</div><div class="desc">' + d.desc + '</div></div>' +
+        '<div class="meta"><span>' + d.type + '</span><span class="tag">' + d.file + '</span></div>';
+      grid.appendChild(a);
+    });
+  });
+
+  // 縮圖依卡片寬度等比縮放（iframe 以 1600px 寬渲染）
+  function fit() {
+    document.querySelectorAll('.thumb').forEach(t => {
+      const f = t.querySelector('iframe');
+      f.style.transform = 'scale(' + (t.clientWidth / 1600) + ')';
+    });
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+  fit();
+  document.getElementById('foot').textContent = '共 ' + n + ' 張 · 更新 ' + new Date().toISOString().slice(0, 10);
+</script>
+</body>
+</html>

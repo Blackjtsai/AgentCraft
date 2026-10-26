@@ -1,6 +1,7 @@
 # SETUP — AgentCraft（代理工坊）
 
 > 環境部署清單，逐項確認就緒。就緒 ✅ / 未完成 ❌
+> **初期在本機執行**（使用者 2026-10-24）；kubectl、K8s 叢集、NAS 掛載等上雲項目延後。
 > 狀態欄為初始化時的預設，請於 Layer 1 開始前實際檢查並更新。
 
 ## 環境工具
@@ -25,8 +26,10 @@
 | AI Gateway 端點與金鑰 | 向 AI 大腦團隊索取 | ❌ 待取得 |
 | Google OAuth Client（MVP2） | 向資安治理團隊 / 雲端主控台申請 | ⏸ 延後 |
 | Microsoft OAuth Client（MVP2） | 同上 | ⏸ 延後 |
-| 寄信服務（登入 token，MVP1 必要） | 待定 | ❌ 待定 |
+| 發信 API（登入 token，MVP1 必要；SMTP 暫不處理） | 待定 | ❌ 待定 |
+| Gemini API Key | Google AI Studio / 公司帳號 | ❌ 待取得 |
 | K8s 叢集與 namespace | 向基礎設施團隊申請 | ❌ 待申請 |
+| NAS 掛載（協定、路徑、容量、備份、ReadWriteMany） | 向基礎設施團隊確認；本機規約見 `nas/README.md` | ❌ 待確認 |
 
 ## 安裝步驟
 

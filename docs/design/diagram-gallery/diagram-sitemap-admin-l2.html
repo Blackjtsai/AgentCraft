@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentCraft 後台網站地圖 · 第二層 · Tree</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Noto+Serif:ital@0;1&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:   #f5f5f5;   /* white-smoke */
+      --color-ink:     #2d3142;   /* jet-black */
+      --color-muted:   #4f5d75;   /* blue-slate */
+      --color-accent:  #bf4520;   /* burnt-tangerine */
+      --font-sans:     'Geist', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+      --font-serif:    'Instrument Serif', 'Noto Serif', 'Noto Serif TC', serif;
+      --font-mono:     'Geist Mono', ui-monospace, monospace;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+
+    .frame { max-width: 1448px; width: 100%; }
+    /* The SVG holds its readable width (min-width == the viewBox width, so the
+       type ramp is never silently scaled down). This wrapper lets a narrow
+       screen scroll the diagram instead of the whole page. */
+    .diagram-container { width: 100%; overflow-x: auto; }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 1.5rem;
+    }
+
+    svg { width: 100%; min-width: 1448px; display: block; }
+    @media print {
+      .diagram-container { overflow-x: visible; }
+      svg { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Tree · Site map · Admin · Level 2</p>
+    <h1>AgentCraft 後台網站地圖 · 第二層</h1>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 1448 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="admin-l2-title admin-l2-desc">
+        <title id="admin-l2-title">AgentCraft 後台網站地圖 · 第二層</title>
+        <desc id="admin-l2-desc">後台第二層：系統後台九頁與 Org 後台六頁，各頁列出內容與所屬階段。</desc>
+        <rect width="100%" height="100%" fill="#f5f5f5"/>
+        <rect x="24" y="96" width="704" height="396" rx="8" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.12)" stroke-width="1"/>
+        <text x="40" y="120" fill="#4f5d75" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif">系統後台 · System Admin</text>
+        <rect x="736" y="96" width="688" height="396" rx="8" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.12)" stroke-width="1"/>
+        <text x="752" y="120" fill="#4f5d75" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif">Org 後台 · Org Owner / Admin / Producer</text>
+        <rect x="40" y="136" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="40" y="136" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="48" y="144" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="62" y="153" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">Y1</text>
+        <text x="144" y="176" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">平台概況</text>
+        <text x="144" y="190" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">ENTRY · M2 → M3</text>
+        <text x="144" y="210" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">Org 數、Seat 使用率</text>
+        <text x="144" y="226" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">活躍學員、訓練成果</text>
+        <rect x="264" y="136" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="264" y="136" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="272" y="144" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="286" y="153" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">Y2</text>
+        <text x="368" y="176" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">Org 管理</text>
+        <text x="368" y="190" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M2</text>
+        <text x="368" y="210" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">建立／停用 Org、指定 Owner</text>
+        <text x="368" y="226" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">合約、Seat、Credits 池</text>
+        <rect x="488" y="136" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="488" y="136" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="496" y="144" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="510" y="153" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">Y3</text>
+        <text x="592" y="176" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">Credits 與成本</text>
+        <text x="592" y="190" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M3</text>
+        <text x="592" y="210" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">用量依 Org／功能／模型</text>
+        <text x="592" y="226" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">實際成本、異常使用者</text>
+        <rect x="40" y="252" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="40" y="252" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="48" y="260" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="62" y="269" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">Y4</text>
+        <text x="144" y="292" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">模型目錄</text>
+        <text x="144" y="306" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M3</text>
+        <text x="144" y="326" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">新增、驗證、停用模型</text>
+        <text x="144" y="342" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">換算比例與費率版本</text>
+        <rect x="264" y="252" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="264" y="252" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="272" y="260" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="286" y="269" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">Y5</text>
+        <text x="368" y="292" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">訓練營運</text>
+        <text x="368" y="306" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M3</text>
+        <text x="368" y="326" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">每情境漏斗</text>
+        <text x="368" y="342" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">卡關點</text>
+        <rect x="488" y="252" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="488" y="252" width="208" height="100" rx="6" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+        <rect x="496" y="260" width="28" height="12" rx="2" fill="transparent" stroke="rgba(191,69,32,0.50)" stroke-width="0.8"/>
+        <text x="510" y="269" fill="#bf4520" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">Y6</text>
+        <text x="592" y="292" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">內容營運 / 情境管理</text>
+        <text x="592" y="306" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M1 → M2</text>
+        <text x="592" y="326" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">情境新增、編輯、上下線</text>
+        <text x="592" y="342" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">素材上傳、上線前檢查</text>
+        <rect x="40" y="368" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="40" y="368" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="48" y="376" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="62" y="385" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">Y7</text>
+        <text x="144" y="408" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">系統健康</text>
+        <text x="144" y="422" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M2</text>
+        <text x="144" y="442" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">Agent、MCP / Twin、LLM</text>
+        <text x="144" y="458" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">錯誤率與延遲</text>
+        <rect x="264" y="368" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="264" y="368" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="272" y="376" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="286" y="385" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">Y8</text>
+        <text x="368" y="408" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">稽核紀錄</text>
+        <text x="368" y="422" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M2+</text>
+        <text x="368" y="442" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">角色、Seat、上限異動</text>
+        <text x="368" y="458" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">只增不改</text>
+        <rect x="488" y="368" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="488" y="368" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="496" y="376" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="510" y="385" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">Y9</text>
+        <text x="592" y="408" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">支援工具</text>
+        <text x="592" y="422" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M2</text>
+        <text x="592" y="442" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">重設密碼、重設學員案件</text>
+        <text x="592" y="458" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">demo 帳號、邀請碼</text>
+        <rect x="752" y="136" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="752" y="136" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="760" y="144" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="774" y="153" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">O1</text>
+        <text x="856" y="176" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">概況</text>
+        <text x="856" y="190" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">ENTRY · M3</text>
+        <text x="856" y="210" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">Seat 已用／總數</text>
+        <text x="856" y="226" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">Producer、本月 Credits</text>
+        <rect x="976" y="136" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="976" y="136" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="984" y="144" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="998" y="153" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">O2</text>
+        <text x="1080" y="176" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">成員與 Seat</text>
+        <text x="1080" y="190" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M2 → M3</text>
+        <text x="1080" y="210" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">邀請、停用、分配 Seat</text>
+        <text x="1080" y="226" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">指派角色</text>
+        <rect x="1200" y="136" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="1200" y="136" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="1208" y="144" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="1222" y="153" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">O3</text>
+        <text x="1304" y="176" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">Credits 與個人上限</text>
+        <text x="1304" y="190" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M3</text>
+        <text x="1304" y="210" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">個人上限、80% 提醒</text>
+        <text x="1304" y="226" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">依功能、模型、人分布</text>
+        <rect x="752" y="252" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="752" y="252" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="760" y="260" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="774" y="269" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">O4</text>
+        <text x="856" y="292" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">模型</text>
+        <text x="856" y="306" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M3</text>
+        <text x="856" y="326" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">核准清單</text>
+        <text x="856" y="342" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">預設模型、停用通知</text>
+        <rect x="976" y="252" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="976" y="252" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="984" y="260" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="998" y="269" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">O5</text>
+        <text x="1080" y="292" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">學習進度</text>
+        <text x="1080" y="306" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M2 → M3</text>
+        <text x="1080" y="326" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">兩條訓練通過狀態</text>
+        <text x="1080" y="342" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">不含對話逐字稿</text>
+        <rect x="1200" y="252" width="208" height="100" rx="6" fill="#f5f5f5"/>
+        <rect x="1200" y="252" width="208" height="100" rx="6" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="1208" y="260" width="28" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+        <text x="1222" y="269" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">O6</text>
+        <text x="1304" y="292" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">情境與發布</text>
+        <text x="1304" y="306" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">M3</text>
+        <text x="1304" y="326" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">發布、更新、下架</text>
+        <text x="1304" y="342" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif" text-anchor="middle">需通過自動安全檢查</text><text x="752" y="376" fill="#4f5d75" font-size="14" font-style="italic" font-family="'Instrument Serif', 'Noto Serif', 'Noto Serif TC', serif">M1 起需有情境管理途徑（Y6），其餘 M2–M3</text><text x="752" y="400" fill="#4f5d75" font-size="14" font-style="italic" font-family="'Instrument Serif', 'Noto Serif', 'Noto Serif TC', serif">Org Admin 看不到學員對話逐字稿</text><text x="752" y="424" fill="#4f5d75" font-size="14" font-style="italic" font-family="'Instrument Serif', 'Noto Serif', 'Noto Serif TC', serif">System Admin 預設也不能讀，查問題留稽核紀錄</text>
+        <line x1="24" y1="516" x2="1424" y2="516" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+        <text x="24" y="536" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.18em">LEGEND</text>
+        <rect x="24" y="552" width="14" height="10" rx="2" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+        <text x="44" y="561" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif">M1 起需要</text>
+        <rect x="140" y="552" width="14" height="10" rx="2" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="160" y="561" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif">後續階段（來自提案，未定案）</text>
+        <text x="380" y="561" fill="#4f5d75" font-size="12" font-weight="500" font-family="'Geist', 'Noto Sans TC', sans-serif">M1＝MVP1　M2＝MVP2　M3＝正式版</text>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

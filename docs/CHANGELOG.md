@@ -11,3 +11,13 @@
 - **決策與更新**：MVP3 目標改為 2027/05 正式上線、年底累計 10 萬人次（非 10 萬人）；**MVP1 登入流程：邀請碼 + email 驗證 → 寄 token 到信箱登入，SSO 後移 MVP2**（token 形式、有效期等待確認）。
 - **誤判與修正**：(1) 先前說「讀過 POC」，實際只讀一部分，已在 POC-ANALYSIS 列明已讀 / 未讀；(2) 92 人天未註明是人工開發基準，已補說明並列入 TODO；(3) 初版後台只有 8 頁，讀完 Org 提案後改寫。
 - **安全**：`需求/文檔.md` 含 POC 帳密，已與 `*.pptx`、`*.zip` 一併列入 `.gitignore`。
+
+## 2026-10-26 網站地圖圖庫與回推 PRD 準備
+
+- **網站地圖圖庫**：以 `diagram-design` skill（已安裝到 `~/.claude/skills/`）產出 `docs/design/diagram-gallery/`：前後台網站地圖第一層（前台、後台上下兩區塊；登入與註冊拆成兩個方塊）、前台第二層、後台第二層、POC 網站地圖、後台 MVP1 A0–A4 版，加 `index.html` 導覽首頁。
+- **後台需求來源釐清**：Y1–Y9、O1–O6 來自 POC 提案（討論版，階段未定案）；Y6 情境管理 M1 起需要是使用者決定；A0–A4 來自 `MVP1-SCOPE.md`。第一層後台區塊畫的是 Y/O，未含 A0–A4（使用者決定不補）。
+- **回推 PRD 準備**：使用者要先依 POC 與會議資訊自行回推 PRD，再與產品規劃師的 PRD 比較。決定用 `~/Documents/tai-builder-prd`（`/tai-prd-gen-v2 --mode draft`）；輸入資料放其 `docs/prd-requests/案件工作台/`（25 張截圖、背景、觀察紀錄、我的決定與立場）；盲測，不讀 `需求/AIP_Education-main/` 與既有 SITEMAP／POC-ANALYSIS。
+- **誤判與修正**：觀察紀錄的截圖對照表依檔名與舊索引寫成，未逐張看圖，24（實為 Agent 執行中）、34（實為 429 錯誤）標錯，情境事件實為 `30-p5-after-run1`；由 tai-builder-prd 那邊的對話逐張看圖發現。已重看並更正觀察紀錄與 `poc-screenshots/README.md`，寫入 feedback memory。
+- **版控防線**：`需求/AIP_Education-main/`（產品規劃團隊私有 repo 解壓縮內容）與 `docs/meetings/**/*.pptx` 加入 `.gitignore`；先前未列入，會被 commit。
+- **同批 commit 的他次對話產物**（本次對話未參與，僅隨 checkpoint 一併提交）：`MVP1-SCOPE.md`、ADR-003／005、`UX-GUIDELINES.md`、`SCENARIO-INTAKE.md`、`sitemap.html`、`specs/templates/`、`web/template/`、`nas/`、`docs/meetings/`，及 CLAUDE.md、TASK、SDD、SITEMAP 等既有文件的修改。
+

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G1 使用教學｜AgentCraft Template</title>
+<link rel="stylesheet" href="assets/theme.css">
+
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="brand" href="index.html">AgentCraft<small>代理工坊</small></a>
+  <nav class="nav" aria-label="主選單"><a href="learning.html">我的學習</a><a href="explore.html">探索情境</a><a href="results.html">我的成果</a><a href="guide.html" aria-current="page">使用說明</a></nav>
+  <span class="user">小明（顯示名稱）</span><a class="btn ghost sm" href="login.html">登出</a>
+</div></header>
+
+<main class="container stack" style="padding-top:24px;max-width:860px">
+  <div><h1>三步學會指揮 AI</h1><p class="muted">不需要程式背景。所有企業資料與操作都是教學模擬。</p></div>
+  <div class="media banner tall" data-slot="教學動畫位置（MVP2；MVP1 為示意圖）"></div>
+  <section class="grid cols-3">
+    <article class="card pad"><div class="media cover" data-slot="示意圖 1"></div><h3 style="margin-top:12px">① 交代任務</h3><p class="muted">用一般說話的方式，請 AI Agent 查詢各系統、處理企業案件。</p></article>
+    <article class="card pad"><div class="media cover" data-slot="示意圖 2"></div><h3 style="margin-top:12px">② 確認方案</h3><p class="muted">Agent 先提出方案，你同意後它才動手。按同意不代表對方已答應。</p></article>
+    <article class="card pad"><div class="media cover" data-slot="示意圖 3"></div><h3 style="margin-top:12px">③ 寫成 Skill</h3><p class="muted">把處理方法寫成 Skill，換新案件驗證能不能重複使用。</p></article>
+  </section>
+  <section class="card pad stack"><h2>Agent 的界線</h2>
+    <table class="simple"><tbody>
+      <tr><th>可以直接做</th><td>查資料、比較選項、整理方案與報告</td></tr>
+      <tr><th>要你先同意</th><td>聯絡真人、寫入系統、發通知</td></tr>
+      <tr><th>要先停下來查</th><td>身分未核對、資料矛盾、結果不明</td></tr>
+      <tr><th>要交給負責單位</th><td>需要專業判斷或超出權限</td></tr>
+    </tbody></table></section>
+  <section class="card pad stack"><h2>常見問題</h2>
+    <details><summary>Agent 做很久怎麼辦？</summary><p class="muted">畫面會顯示目前步驟與已經過的時間。你可以先看左邊的任務清單，也可以按「停止」。</p></details>
+    <details><summary>按「同意」是什麼意思？</summary><p class="muted">只代表 Agent 可以照方案去做，不代表病患、客戶或主管已經答應。</p></details>
+    <details><summary>做錯了會扣分嗎？</summary><p class="muted">不計分。被擋下的操作是學習提示。</p></details>
+    <details><summary>可以重來嗎？</summary><p class="muted">第一關可以「重設本案」，案件資料回到初始，Skill 與學習紀錄保留。</p></details>
+    <details><summary>登入連結沒收到？</summary><p class="muted">約 1–2 分鐘內會寄達，請先檢查垃圾郵件匣；連結 10 分鐘內有效且只能用一次。</p></details>
+  </section>
+  <p class="muted">教學文字由產品規劃團隊提供，這裡是示意。</p>
+</main>
+<span class="template-badge">TEMPLATE・僅示意結構，非最終設計</span>
+<script src="assets/app.js"></script>
+</body>
+</html>
